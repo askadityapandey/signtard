@@ -1,0 +1,55 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <style>
+      .cls-1, .cls-6 {
+        fill: #231f20;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: none;
+        stroke: #231f20;
+        stroke-linecap: round;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-6 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        stroke-dasharray: 10.82 10.82;
+      }
+
+      .cls-4 {
+        stroke-dasharray: 10.4 10.4;
+      }
+
+      .cls-5, .cls-6 {
+        font-size: 43.69px;
+        font-family: YungJakesNewHandwriting-Rg, Yung Jakes New Handwriting;
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        stroke: #fff;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="cls-1" x="2.41" y="2.82" width="44.47" height="43.21"/>
+    <g>
+      <polyline class="cls-2" points="46.88 40.02 46.88 46.02 40.88 46.02"/>
+      <line class="cls-3" x1="30.05" y1="46.03" x2="13.82" y2="46.03"/>
+      <polyline class="cls-2" points="8.41 46.02 2.41 46.02 2.41 40.02"/>
+      <line class="cls-4" x1="2.41" y1="29.62" x2="2.41" y2="14.02"/>
+      <polyline class="cls-2" points="2.41 8.82 2.41 2.82 8.41 2.82"/>
+      <line class="cls-3" x1="19.23" y1="2.82" x2="35.47" y2="2.82"/>
+      <polyline class="cls-2" points="40.88 2.82 46.88 2.82 46.88 8.82"/>
+      <line class="cls-4" x1="46.88" y1="19.22" x2="46.88" y2="34.82"/>
+    </g>
+  </g>
+  <text class="cls-5" transform="translate(15.76 38.78)">S</text>
+  <text class="cls-6" transform="translate(18.15 38.39)">S</text>
+</svg>
