@@ -10,9 +10,7 @@ Signtard is a simple web application that allows users to draw their signatures 
 ## Screenshot
 ![Uploading Annotation 2024-02-25 213904.png…]()
 
-## Getting Started
 
-1. Clone the repository:
+## Contributing
+Contributions are welcome! If you have any ideas, feature suggestions, or bug reports, please open an issue or submit a pull request.
 
-   ```bash
-   git clone https://github.com/your-username/signtard.git
