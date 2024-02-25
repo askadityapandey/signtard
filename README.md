@@ -1,5 +1,6 @@
 # Signtard
 [![JGMwARS.md.png](https://iili.io/JGMwARS.md.png)](https://freeimage.host/i/JGMwARS)
+
 Signtard is a simple web application that allows users to draw their signatures digitally and download them as PNG files.
 
 ## Features
