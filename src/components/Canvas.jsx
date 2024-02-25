@@ -1,4 +1,3 @@
-// Canvas.jsx
 import React, { useRef, useState } from 'react';
 
 function Canvas() {
@@ -6,16 +5,16 @@ function Canvas() {
   const [isDrawing, setIsDrawing] = useState(false);
   const [prevPos, setPrevPos] = useState({ x: 0, y: 0 });
 
-  const startDrawing = ({ nativeEvent }) => {
-    const { offsetX, offsetY } = nativeEvent;
+  const startDrawing = (event) => {
+    const { offsetX, offsetY } = getPos(event);
     setIsDrawing(true);
     setPrevPos({ x: offsetX, y: offsetY });
   };
 
-  const draw = ({ nativeEvent }) => {
+  const draw = (event) => {
     if (!isDrawing) return;
     const ctx = canvasRef.current.getContext('2d');
-    const { offsetX, offsetY } = nativeEvent;
+    const { offsetX, offsetY } = getPos(event);
     ctx.beginPath();
     ctx.moveTo(prevPos.x, prevPos.y);
     ctx.lineTo(offsetX, offsetY);
@@ -43,11 +42,27 @@ function Canvas() {
     link.click();
   };
 
+  const getPos = (event) => {
+    const rect = canvasRef.current.getBoundingClientRect();
+    if (event.type.startsWith('touch')) {
+      const touch = event.touches[0];
+      return {
+        offsetX: touch.clientX - rect.left,
+        offsetY: touch.clientY - rect.top,
+      };
+    } else {
+      return {
+        offsetX: event.clientX - rect.left,
+        offsetY: event.clientY - rect.top,
+      };
+    }
+  };
+
   return (
     <div className="canvas-container">
-      <h2 className=" text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-blue-to-r from bg-blue-700 to to-green-700">
-  Draw your Sign!
-</h2>
+      <h2 className="text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-blue-to-r from bg-blue-700 to to-green-700">
+        Draw your Sign!
+      </h2>
 
       <canvas
         ref={canvasRef}
@@ -63,11 +78,8 @@ function Canvas() {
         style={{ border: '2px solid #000', borderRadius: '8px', backgroundColor: '#fff' }} // Apply border and background color
       ></canvas>
       <div className="buttons mt-4">
-      <div className="buttons mt-4">
-  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2" onClick={clearCanvas}>Clear</button>
-  <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={downloadSignature}>Download</button>
-</div>
-
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2" onClick={clearCanvas}>Clear</button>
+        <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={downloadSignature}>Download</button>
       </div>
     </div>
   );
